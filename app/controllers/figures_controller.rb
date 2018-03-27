@@ -11,4 +11,18 @@ class FiguresController < ApplicationController
   post '/figures' do
 
   end
+
+  get '/figures/:id/edit' do
+    @figure = Figure.find_by(id: params[:id])
+    erb :"/figures/edit"
+  end
+
+  patch '/figures' do
+
+  end
+
+  get '/figures/:id' do
+    @figure = Figure.find_by(id: params[:id])
+    erb :"/figures/show"
+  end
 end
